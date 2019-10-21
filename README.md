@@ -1,5 +1,5 @@
 # Desafio21
-Desafio21 da P21 Sistemas
+Desafio21 da P21 Sistemas para o cargo de Desenvolvedor PHP Pleno
 
 Sobre o Sistema:
 - O sistema Anoreg foi solicitado para suprir a função de um antigo funcionário e automatizar o processo de gerênciamento dos cartórios, facilitando o manuseamento do sistema onde a tarefa será alocada a uma secretária da empresa. Com um arquivo XML padrão que a empresa recebe mensalmente do CNJ, é possivel a inserção, atualização, cadastro e edição de dados manuais, tanto de usuários quanto dos cartórios. O Anoreg disponibiliza a opção de gerar relatórios e envio de e-mails para os cartórios registrados.

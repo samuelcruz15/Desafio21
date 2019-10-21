@@ -38,7 +38,7 @@ class Cartorio extends MCartorio {
                 $checkCartorio = $this->select_check('cartorio', 'str_documento', "'$documento'");
 
                 if ($checkCartorio == 0) {
-                    //insercao                             
+                    //insercao
                     $insercao = $this->insert($arrDados);
 
                     if ($insercao == true) {
@@ -104,14 +104,13 @@ class Cartorio extends MCartorio {
             }
 
             echo json_encode($arr);
-        } elseif($par != 'inicio'){
-            $uf= explode('-', $par);
-            $uf=$uf[1];
-            $uf=$this->retornoIdUF(2, $uf);
-            
-            return $this->listaDados('cartorio',$uf,null,'id_estado');
-            
-        }else {
+        } elseif ($par != 'inicio') {
+            $uf = explode('-', $par);
+            $uf = $uf[1];
+            $uf = $this->retornoIdUF(2, $uf);
+
+            return $this->listaDados('cartorio', $uf, null, 'id_estado');
+        } else {
             return $this->listaDados('cartorio');
         }
     }
@@ -125,7 +124,7 @@ class Cartorio extends MCartorio {
     }
 
     function atualizarCartorio() {
-        var_dump($_POST);
+
         $arrDados = Array();
 
         $_POST['arrDadosForm']['str_nome'] = $this->validaString(utf8_decode($_POST['arrDadosForm']['str_nome']));
@@ -256,11 +255,12 @@ class Cartorio extends MCartorio {
                 $this->redirect(16, 'cartorio/listarCartorios');
             }
         } else {
-            
+
         }
     }
 
     function mandaEmail() {
+
         require_once '../application/class/PHPMailer/src/PHPMailer.php';
         require_once '../application/class/PHPMailer/src/SMTP.php';
         $mail = new PHPMailer();
@@ -271,7 +271,7 @@ class Cartorio extends MCartorio {
         $mail->Username = 'anoregsistema@gmail.com';
         $mail->Password = 'anoreg159';
         $mail->Port = 587;
-       $mail->SMTPDebug = 3;
+        $mail->SMTPDebug = 3;
         $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
@@ -279,21 +279,21 @@ class Cartorio extends MCartorio {
                 'allow_self_signed' => true
             )
         );
-        $mail->setFrom('samuka10fute@gmail.com');
+        $mail->setFrom('anoregsistema@gmail.com');
+
         $mail->addAddress('samuka10fute@gmail.com');
         $mail->isHTML(true);
-        $mail->Subject = 'Assunto do email';
-        $mail->Body = 'Este é o conteúdo da mensagem em <b>HTML!</b>';
-        
-        
+        $mail->Subject = utf8_decode($_POST['assunto']);
+        $mail->Body = utf8_decode($_POST['conteudo']);
+
         if (!$mail->send()) {
-            echo 'Não foi possível enviar a mensagem.<br>';
-            echo 'Erro: ' . $mail->ErrorInfo;
+            //  echo 'Não foi possível enviar a mensagem.<br>';
+            // echo 'Erro: ' . $mail->ErrorInfo;
+            $this->redirect('19', "cartorio/mandaEmal");
         } else {
-            echo 'Mensagem enviada.';
+            $this->redirect('20', "cartorio/mandaEmal");
         }
     }
-
 
     function mapa() {
 
@@ -315,16 +315,16 @@ class Cartorio extends MCartorio {
                 $local = $local . '-' . $this->retornoIdUF(1, $dados['id_estado']);
                 $qtd = $qtd . '-' . $dados['total'];
             }
-            
-            
-            if($dados['total'] > $maior_valor){
-                $maior_valor=$dados['total'];
+
+
+            if ($dados['total'] > $maior_valor) {
+                $maior_valor = $dados['total'];
             }
-            if($menor_valor==0){
-                 $menor_valor=$dados['total'];
+            if ($menor_valor == 0) {
+                $menor_valor = $dados['total'];
             }
-            if($dados['total'] < $menor_valor){
-                $menor_valor=$dados['total'];
+            if ($dados['total'] < $menor_valor) {
+                $menor_valor = $dados['total'];
             }
         }
 
@@ -368,7 +368,7 @@ class Cartorio extends MCartorio {
                     "getAreasFromMap": true,
                     "zoomLevel": 0.9,
                     //Posso usar id,value,description,percent
-                    "areas": function () {
+                    "areas": function() {
                         var dadosArray = [];
                         for (i in arraylocais) {
                             dadosArray.push({
@@ -400,7 +400,7 @@ class Cartorio extends MCartorio {
                     "right": 0,
                     "horizontalGap": 10,
                     "switchable": true,
-                    "data": (function () {
+                    "data": (function() {
                         var dadosArray = [];
                         for (i in arraylocais) {
                             dadosArray.push({
@@ -432,13 +432,13 @@ class Cartorio extends MCartorio {
                     }]
             });
 
-            map.addListener('init', function () {
+            map.addListener('init', function() {
                 //map.legend.switchable = true;
                 map.legend.addListener("clickMarker", AmCharts.myHandleLegendClick);
                 map.legend.addListener("clickLabel", AmCharts.myHandleLegendClick);
             });
 
-            AmCharts.myHandleLegendClick = function (event) {
+            AmCharts.myHandleLegendClick = function(event) {
                 var id = event.dataItem.id;
                 if (undefined !== event.dataItem.hidden && event.dataItem.hidden) {
                     event.dataItem.hidden = false;

@@ -10,7 +10,7 @@ class Login extends MLogin {
 
         //Verificar se existe no banco
         $buscarUsuario = $this->validaAcesso($arrDadosForm);
-      
+
         $resultadoUsuario = mysqli_num_rows($buscarUsuario);
 
 //Usuario Não cadastrado no Banco
@@ -65,13 +65,13 @@ class Login extends MLogin {
                 }
 
                 $_SESSION['ACESSO'] = $arP;
-                $this->redirect('null', 'inicio/home');
+                $this->redirect('null', 'cartorio/mapaCartorio');
             }
         }
     }
 
     function inicio() {
-        
+
     }
 
     function sair() {

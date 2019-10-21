@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Out-2019 às 02:21
+-- Tempo de geração: 21-Out-2019 às 10:20
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -62,6 +62,74 @@ INSERT INTO `aud_generica_tabela` (`id_generica_tabela`, `str_descricao`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `cartorio`
+--
+
+CREATE TABLE `cartorio` (
+  `id_cartorio` bigint(20) NOT NULL,
+  `id_estado` int(11) NOT NULL,
+  `str_nome` varchar(255) NOT NULL,
+  `str_razao` varchar(255) NOT NULL,
+  `int_tipo_documento` int(11) DEFAULT NULL,
+  `str_documento` varchar(20) NOT NULL,
+  `str_cep` varchar(255) NOT NULL,
+  `str_endereco` varchar(255) NOT NULL,
+  `str_bairro` varchar(255) NOT NULL,
+  `str_cidade` varchar(255) NOT NULL,
+  `str_telefone` varchar(255) DEFAULT NULL,
+  `str_email` varchar(255) DEFAULT NULL,
+  `str_tabeliao` varchar(255) NOT NULL,
+  `int_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estado`
+--
+
+CREATE TABLE `estado` (
+  `id_estado` int(11) NOT NULL,
+  `str_uf` varchar(3) NOT NULL,
+  `str_nome` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `estado`
+--
+
+INSERT INTO `estado` (`id_estado`, `str_uf`, `str_nome`) VALUES
+(1, 'AC', 'Acre'),
+(2, 'AL', 'Alagoas'),
+(3, 'AP', 'Amapá'),
+(4, 'AM', 'Amazonas'),
+(5, 'BA', 'Bahia'),
+(6, 'CE', 'Ceará'),
+(7, 'DF', 'Distrito Federal'),
+(8, 'ES', 'Espírito Santo'),
+(9, 'GO', 'Goiás'),
+(10, 'MA', 'Maranhão'),
+(11, 'MT', 'Mato Grosso'),
+(12, 'MS', 'Mato Grosso do SUL'),
+(13, 'MG', 'Minas Gerais'),
+(14, 'PA', 'Pará'),
+(15, 'PB', 'Paraíba'),
+(16, 'PR', 'Paraná'),
+(17, 'PE', 'Pernambuco'),
+(18, 'PI', 'Piauí'),
+(19, 'RJ', 'Rio de Janeiro'),
+(20, 'RN', 'Rio Grande do Norte'),
+(21, 'RS', 'Rio Grande do Sul'),
+(22, 'RO', 'Rondônia'),
+(23, 'RR', 'Roraima'),
+(24, 'SC', 'Santa Catarina'),
+(25, 'SP', 'São Paulo'),
+(26, 'SE', 'Sergipe'),
+(27, 'TO', 'Tocantins');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `gr_acesso`
 --
 
@@ -97,7 +165,14 @@ INSERT INTO `gr_acesso` (`id_acesso`, `id_perfil`, `id_view`, `visualizar`, `cad
 (17, 1, 12, 1, 1, 1, 1),
 (18, 1, 13, 1, 1, 1, 1),
 (19, 1, 15, 1, 1, 1, 1),
-(20, 1, 16, 1, 1, 1, 1);
+(20, 1, 16, 1, 1, 1, 1),
+(21, 1, 132, 1, 1, 1, 1),
+(23, 1, 134, 1, 1, 1, 1),
+(24, 1, 135, 1, 1, 1, 1),
+(25, 1, 136, 1, 1, 1, 1),
+(26, 1, 137, 1, 1, 1, 1),
+(27, 1, 138, 1, 1, 1, 1),
+(28, 1, 139, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -125,7 +200,8 @@ INSERT INTO `gr_modulo` (`id_modulo`, `str_modulo`) VALUES
 (12, 'erro'),
 (15, 'auditoria'),
 (66, 'projeto'),
-(67, 'temp');
+(67, 'temp'),
+(68, 'cartorio');
 
 -- --------------------------------------------------------
 
@@ -171,7 +247,9 @@ CREATE TABLE `gr_usuario` (
 --
 
 INSERT INTO `gr_usuario` (`id_usuario`, `id_perfil`, `str_login`, `str_situacao`, `str_telefone`, `str_email`, `str_nome`, `dt_registro`, `str_usr_criador`, `str_senha`, `str_cpf`) VALUES
-(4, 1, 'Samuel.santos', 'A', '(61) 98409-9965', 'samuka10fute@hotmail.com', 'Samuel dos santos cruz', '2019-10-17 22:15:12', 'samuel.cruz', '2b856e66e9d7bd2f4674098c7fae5ebb', '048.769.851-70');
+(4, 1, 'Samuel.santos', 'A', '(61) 98409-9965', 'samuka10fute@hotmail.com', 'Samuel dos santos cruz', '2019-10-17 22:15:12', 'samuel.cruz', '2b856e66e9d7bd2f4674098c7fae5ebb', '048.769.851-70'),
+(5, 1, 'Cleia.Freitas', 'A', '(61) 98430-8557', 'cleia9976@gmail.com', 'Cleia Rodrigues Freitas', '2019-10-18 21:53:42', 'Samuel.santos', '98a5487202ebf54fd8d25fe51aa2f40c', '06617597176'),
+(6, 1, 'LUIS.SANTOS', 'A', '6184099965', 'samuka10fute@gmail.com', 'LUIS LIMA DOS SANTOS', '2019-10-18 22:05:33', 'Samuel.santos', 'ad73d403631dec248b1d6e9a4b24fd5a', '024.423.021-87');
 
 -- --------------------------------------------------------
 
@@ -211,7 +289,14 @@ INSERT INTO `gr_view` (`id_view`, `id_modulo`, `str_view`) VALUES
 (39, 6, 'mapa'),
 (40, 15, 'auditoria-adm'),
 (126, 1, 'manutencao'),
-(131, 6, 'home');
+(131, 6, 'home'),
+(132, 68, 'inicioCartorio'),
+(134, 68, 'atualizaCartorio'),
+(135, 68, 'listarCartorios'),
+(136, 68, 'novoCartorio'),
+(137, 68, 'atualizaCartorioExce'),
+(138, 68, 'mandaEmal'),
+(139, 68, 'mapaCartorio');
 
 --
 -- Índices para tabelas despejadas
@@ -228,6 +313,18 @@ ALTER TABLE `aud_auditoria`
 --
 ALTER TABLE `aud_generica_tabela`
   ADD PRIMARY KEY (`id_generica_tabela`);
+
+--
+-- Índices para tabela `cartorio`
+--
+ALTER TABLE `cartorio`
+  ADD PRIMARY KEY (`id_cartorio`);
+
+--
+-- Índices para tabela `estado`
+--
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`id_estado`);
 
 --
 -- Índices para tabela `gr_acesso`
@@ -276,16 +373,28 @@ ALTER TABLE `aud_generica_tabela`
   MODIFY `id_generica_tabela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de tabela `cartorio`
+--
+ALTER TABLE `cartorio`
+  MODIFY `id_cartorio` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22868;
+
+--
+-- AUTO_INCREMENT de tabela `estado`
+--
+ALTER TABLE `estado`
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
 -- AUTO_INCREMENT de tabela `gr_acesso`
 --
 ALTER TABLE `gr_acesso`
-  MODIFY `id_acesso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_acesso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `gr_modulo`
 --
 ALTER TABLE `gr_modulo`
-  MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT de tabela `gr_perfil`
@@ -297,13 +406,13 @@ ALTER TABLE `gr_perfil`
 -- AUTO_INCREMENT de tabela `gr_usuario`
 --
 ALTER TABLE `gr_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `gr_view`
 --
 ALTER TABLE `gr_view`
-  MODIFY `id_view` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id_view` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

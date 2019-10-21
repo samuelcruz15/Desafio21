@@ -102,6 +102,11 @@
                             <span class="title">Atualizar Cartório Excel</span>
                         </a>
                     </li>
+                      <li class="nav-item start ">
+                        <a href="<?php echo RAIZ . "cartorio/mandaEmal"; ?>" class="nav-link ">
+                            <span class="title">Enviar Email</span>
+                        </a>
+                    </li>
                  
                 </ul>
             </li>

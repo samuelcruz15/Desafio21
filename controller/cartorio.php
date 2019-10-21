@@ -254,6 +254,44 @@ class Cartorio extends MCartorio {
         }
     }
 
+    function mandaEmail() {
+
+        require_once '../application/class/PHPMailer/src/PHPMailer.php';
+        require_once '../application/class/PHPMailer/src/SMTP.php';
+
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+        $mail->Username = 'samuka10fute@gmail.com';
+        $mail->Password = 'samu61546';
+        $mail->Port = 587;
+       // $mail->SMTPDebug = 3;
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+
+        $mail->setFrom('samuka10fute@gmail.com');
+        $mail->addAddress('samuka10fute@gmail.com');
+
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Assunto do email';
+        $mail->Body = 'Este é o conteúdo da mensagem em <b>HTML!</b>';
+
+        if (!$mail->send()) {
+            echo 'Não foi possível enviar a mensagem.<br>';
+            echo 'Erro: ' . $mail->ErrorInfo;
+        } else {
+            echo 'Mensagem enviada.';
+        }
+    }
+
 }
 
 $oCartorio = new Cartorio();

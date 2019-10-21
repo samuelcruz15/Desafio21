@@ -264,8 +264,8 @@ class Cartorio extends MCartorio {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
-        $mail->Username = 'samuka10fute@gmail.com';
-        $mail->Password = 'samu61546';
+        $mail->Username = 'anoregsistema@gmail.com';
+        $mail->Password = 'anoreg159';
         $mail->Port = 587;
        // $mail->SMTPDebug = 3;
         $mail->SMTPOptions = array(

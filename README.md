@@ -2,7 +2,7 @@
 Desafio21 da P21 Sistemas
 
 Sobre o Sistema:
-Sistema anoreg foi feito para ajudar a vida da secretaria que ficará responsável pela gestão de dados dos cartórios do Brasil da empresa Anoreg.
+- Sistema anoreg foi feito para ajudar a vida da secretaria que ficará responsável pela gestão de dados dos cartórios do Brasil da empresa Anoreg.
 A partir do arquivo XML que recebe mensalmente do CNJ, a funcionária conseguirar fazer o upload do propio arquivo no sistema, e este fará a inserção ou a atualização dos dados automaticamente.É possível atualizar a base existente no sistema utilizando a planilha excel(xlsx) que contem os dados atualiados do cartório. O sistema também permite o cadastro e edição de dados manuais, alem de gerar relatórios,mandar email para todos os cartórios registrados e criar novos usuários.
 
 Requisitos para rodar sistema:

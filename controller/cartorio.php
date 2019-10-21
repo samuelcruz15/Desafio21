@@ -260,7 +260,7 @@ class Cartorio extends MCartorio {
     }
 
     function mandaEmail() {
-
+        ini_set('max_execution_time', 500);
         require_once '../application/class/PHPMailer/src/PHPMailer.php';
         require_once '../application/class/PHPMailer/src/SMTP.php';
         $mail = new PHPMailer();
@@ -271,7 +271,7 @@ class Cartorio extends MCartorio {
         $mail->Username = 'anoregsistema@gmail.com';
         $mail->Password = 'anoreg159';
         $mail->Port = 587;
-        $mail->SMTPDebug = 3;
+        // $mail->SMTPDebug = 3;
         $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
@@ -281,10 +281,26 @@ class Cartorio extends MCartorio {
         );
         $mail->setFrom('anoregsistema@gmail.com');
 
-        $mail->addAddress('samuka10fute@gmail.com');
-        $mail->isHTML(true);
-        $mail->Subject = utf8_decode($_POST['assunto']);
-        $mail->Body = utf8_decode($_POST['conteudo']);
+        $consultaCartorio = $this->listarEmailCartorios();
+        $totalEmail = mysqli_num_rows($consultaCartorio);
+        $total = 1;
+
+        while ($mailCartorio = mysqli_fetch_array($consultaCartorio)) {
+            $mail->addAddress($mailCartorio['str_email']) . '<br>';
+            $mail->isHTML(true);
+            $mail->Subject = utf8_decode($_POST['assunto']);
+            $mail->Body = utf8_decode($_POST['conteudo']);
+            //echo $mailCartorio['str_email'] . '<br>';
+
+            if ($mail->send()) {
+                echo 'Email enviado para ' . $mailCartorio['str_email'] . ' com sucesso - ';
+                echo $total . ' email enviado de ' . $totalEmail . '<br>';
+                $total++;
+            }
+            $mail->ClearAllRecipients();
+        }
+
+
 
         if (!$mail->send()) {
             //  echo 'Não foi possível enviar a mensagem.<br>';

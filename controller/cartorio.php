@@ -260,7 +260,7 @@ class Cartorio extends MCartorio {
     }
 
     function mandaEmail() {
-        ini_set('max_execution_time', 500);
+        ini_set('max_execution_time', 12000);
         require_once '../application/class/PHPMailer/src/PHPMailer.php';
         require_once '../application/class/PHPMailer/src/SMTP.php';
         $mail = new PHPMailer();
@@ -294,7 +294,8 @@ class Cartorio extends MCartorio {
 
             if ($mail->send()) {
                 echo 'Email enviado para ' . $mailCartorio['str_email'] . ' com sucesso - ';
-                echo $total . ' email enviado de ' . $totalEmail . '<br>';
+                echo '<b>' . $total . '</b>' . ' email enviado de ' . $totalEmail . ' - ';
+                echo 'Enviado às : ' . date('H:i:s') . ' <br>';
                 $total++;
             }
             $mail->ClearAllRecipients();

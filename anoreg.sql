@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Out-2019 às 10:20
--- Versão do servidor: 10.4.6-MariaDB
--- versão do PHP: 7.2.22
+-- Generation Time: 21-Out-2019 às 19:47
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `anoreg`
+-- Database: `anoreg`
 --
 
 -- --------------------------------------------------------
@@ -247,9 +247,7 @@ CREATE TABLE `gr_usuario` (
 --
 
 INSERT INTO `gr_usuario` (`id_usuario`, `id_perfil`, `str_login`, `str_situacao`, `str_telefone`, `str_email`, `str_nome`, `dt_registro`, `str_usr_criador`, `str_senha`, `str_cpf`) VALUES
-(4, 1, 'Samuel.santos', 'A', '(61) 98409-9965', 'samuka10fute@hotmail.com', 'Samuel dos santos cruz', '2019-10-17 22:15:12', 'samuel.cruz', '2b856e66e9d7bd2f4674098c7fae5ebb', '048.769.851-70'),
-(5, 1, 'Cleia.Freitas', 'A', '(61) 98430-8557', 'cleia9976@gmail.com', 'Cleia Rodrigues Freitas', '2019-10-18 21:53:42', 'Samuel.santos', '98a5487202ebf54fd8d25fe51aa2f40c', '06617597176'),
-(6, 1, 'LUIS.SANTOS', 'A', '6184099965', 'samuka10fute@gmail.com', 'LUIS LIMA DOS SANTOS', '2019-10-18 22:05:33', 'Samuel.santos', 'ad73d403631dec248b1d6e9a4b24fd5a', '024.423.021-87');
+(4, 1, 'Samuel.santos', 'A', '(61) 98409-9965', 'samuka10fute@hotmail.com', 'Samuel dos santos cruz', '2019-10-17 22:15:12', 'samuel.cruz', '2b856e66e9d7bd2f4674098c7fae5ebb', '048.769.851-70');
 
 -- --------------------------------------------------------
 
@@ -299,117 +297,117 @@ INSERT INTO `gr_view` (`id_view`, `id_modulo`, `str_view`) VALUES
 (139, 68, 'mapaCartorio');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `aud_auditoria`
+-- Indexes for table `aud_auditoria`
 --
 ALTER TABLE `aud_auditoria`
   ADD PRIMARY KEY (`id_auditoria`);
 
 --
--- Índices para tabela `aud_generica_tabela`
+-- Indexes for table `aud_generica_tabela`
 --
 ALTER TABLE `aud_generica_tabela`
   ADD PRIMARY KEY (`id_generica_tabela`);
 
 --
--- Índices para tabela `cartorio`
+-- Indexes for table `cartorio`
 --
 ALTER TABLE `cartorio`
   ADD PRIMARY KEY (`id_cartorio`);
 
 --
--- Índices para tabela `estado`
+-- Indexes for table `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`id_estado`);
 
 --
--- Índices para tabela `gr_acesso`
+-- Indexes for table `gr_acesso`
 --
 ALTER TABLE `gr_acesso`
   ADD PRIMARY KEY (`id_acesso`);
 
 --
--- Índices para tabela `gr_modulo`
+-- Indexes for table `gr_modulo`
 --
 ALTER TABLE `gr_modulo`
   ADD PRIMARY KEY (`id_modulo`);
 
 --
--- Índices para tabela `gr_perfil`
+-- Indexes for table `gr_perfil`
 --
 ALTER TABLE `gr_perfil`
   ADD PRIMARY KEY (`id_perfil`);
 
 --
--- Índices para tabela `gr_usuario`
+-- Indexes for table `gr_usuario`
 --
 ALTER TABLE `gr_usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Índices para tabela `gr_view`
+-- Indexes for table `gr_view`
 --
 ALTER TABLE `gr_view`
   ADD PRIMARY KEY (`id_view`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `aud_auditoria`
+-- AUTO_INCREMENT for table `aud_auditoria`
 --
 ALTER TABLE `aud_auditoria`
   MODIFY `id_auditoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `aud_generica_tabela`
+-- AUTO_INCREMENT for table `aud_generica_tabela`
 --
 ALTER TABLE `aud_generica_tabela`
   MODIFY `id_generica_tabela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `cartorio`
+-- AUTO_INCREMENT for table `cartorio`
 --
 ALTER TABLE `cartorio`
-  MODIFY `id_cartorio` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22868;
+  MODIFY `id_cartorio` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25235;
 
 --
--- AUTO_INCREMENT de tabela `estado`
+-- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
   MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT de tabela `gr_acesso`
+-- AUTO_INCREMENT for table `gr_acesso`
 --
 ALTER TABLE `gr_acesso`
   MODIFY `id_acesso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT de tabela `gr_modulo`
+-- AUTO_INCREMENT for table `gr_modulo`
 --
 ALTER TABLE `gr_modulo`
   MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- AUTO_INCREMENT de tabela `gr_perfil`
+-- AUTO_INCREMENT for table `gr_perfil`
 --
 ALTER TABLE `gr_perfil`
   MODIFY `id_perfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `gr_usuario`
+-- AUTO_INCREMENT for table `gr_usuario`
 --
 ALTER TABLE `gr_usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `gr_view`
+-- AUTO_INCREMENT for table `gr_view`
 --
 ALTER TABLE `gr_view`
   MODIFY `id_view` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;

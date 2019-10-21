@@ -32,7 +32,7 @@ Fluxo sistema:
 - 6º Após a visualização dos dados, vá para cartório>Atualiza cartório Excel e suba o arquivo xlsx que se encontra na raiz do projeto, para atualizar os dados.
 - 7º Após a atualização dos dados voltará para as listagem de cartórios, agora com os dados telefone e email atualizados, mude o email dos primeiros cartórios para o seu pessoal, para fazer o teste da função logo à frente.
 - 8º Volte para Home e veja o mapa atualizado com os cartórios agora disponíveis.
-- 9º No Menu> Enviar Email, é póssivel enviar um email para todo os cartórios registrados no sistema,o envio pode ser demorado dependendo do numero de cartórios ativos.
+- 9º No Menu Cartório> Enviar Email, é póssivel enviar um email para todo os cartórios registrados no sistema,o envio pode ser demorado dependendo do numero de cartórios ativos.
 
 Após todos os passos, terá feito o fluxo principal do sistema.
 

@@ -1,5 +1,4 @@
 
-
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
@@ -9,9 +8,9 @@
         </li>
         <li>
             <a href="<?php echo RAIZ . "cartorio/mandaEmal"; ?>">Enviar Emaiil</a>
-           
+
         </li>
-      
+
     </ul>
     <div class="page-toolbar">
         <div class="btn-group pull-right">
@@ -54,19 +53,19 @@
                                     <div class="form-group">
                                         <label class="control-label">Escolha o assunto do email<span class="required" aria-required="true">*</span></label>
                                         <input type="text"  name="assunto"  class="form-control" required >
-                              
+
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Digite a mensagem <span class="required" aria-required="true">*</span></label>
                                         <textarea class="form-control" name='conteudo' required>
-                                            
+
                                         </textarea>
                                         <span class="help-block"> Email enviado para todos os cartorios cadastrados</span>
                                     </div>
                                 </div>
-                         
+
                             </div>
 
                             <div class="form-actions right">
@@ -84,9 +83,9 @@
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
-    
+
         // Pulsante da Mensagem de Sucesso ou Erro
         UIGeneral.init();
 

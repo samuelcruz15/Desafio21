@@ -14,11 +14,12 @@ Explicações sobre o Framework própio:
 Sistema Baseado na arquitetura MVC com orientação a objeto utilizando url amigaveis. Framework se baseia no gerenciamento de módulos e views para acessar as páginas.
 
 Passo a Passo para iniciar o Sitema:
-- 1º Crie uma base no mysql com o nome 'anoreg'.
-- 2º Suba o arquivo anoreg.sql que se encontra na raiz do projeto para criar as tabelas.
-- 3º As configurações do projeto encontram-se no caminho application/config.php caso queira alterar algo.
-- 4º Coloque o projeto dentro da pasta htdocs caso esteja rodando pelo xampp ou wampp
-- 5º Acesse o link local, e se tudo estiver correto, será redirecionado para página de Login.
+- 1º Baixe o projeto e mude o nome da pasta para anoreg
+- 2º Crie uma base no mysql com o nome 'anoreg'.
+- 3º Suba o arquivo anoreg.sql que se encontra na raiz do projeto para criar as tabelas.
+- 4º As configurações do projeto encontram-se no caminho application/config.php caso queira alterar algo.
+- 5º Coloque o projeto dentro da pasta htdocs caso esteja rodando pelo xampp ou wampp
+- 6º Acesse o link local, e se tudo estiver correto, será redirecionado para página de Login.
 
 Fluxo sistema:
 - 1º Acessar a pagína de login e entrar no sistema com o usuario: Samuel.santos e senha:04876985170cruz (único usário criado no projeto).

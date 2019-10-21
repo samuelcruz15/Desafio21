@@ -2,8 +2,7 @@
 Desafio21 da P21 Sistemas
 
 Sobre o Sistema:
-- Sistema anoreg foi feito para ajudar a vida da secretaria que ficará responsável pela gestão de dados dos cartórios do Brasil da empresa Anoreg.
-A partir do arquivo XML que recebe mensalmente do CNJ, a funcionária conseguirar fazer o upload do propio arquivo no sistema, e este fará a inserção ou a atualização dos dados automaticamente.É possível atualizar a base existente no sistema utilizando a planilha excel(xlsx) que contem os dados atualiados do cartório. O sistema também permite o cadastro e edição de dados manuais, alem de gerar relatórios,mandar email para todos os cartórios registrados e criar novos usuários.
+- O sistema Anoreg foi solicitado para suprir a função de um antigo funcionário e automatizar o processo de gerênciamento dos cartórios, facilitando o manuseamento do sistema onde a tarefa será alocada a uma secretária da empresa. Com um arquivo XML padrão que a empresa recebe mensalmente do CNJ, é possivel a inserção, atualização, cadastro e edição de dados manuais, tanto de usuários quanto dos cartórios. O Anoreg disponibiliza a opção de gerar relatórios e envio de e-mails para os cartórios registrados.
 
 Requisitos para rodar sistema:
 - PHP >= 7.2.7 

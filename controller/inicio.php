@@ -8,13 +8,24 @@ class Inicio extends controller {
     }
 
     function mapa() {
-        //Estagiarios Ativos
-        //$est_ativos = $this->ativos();
-        //$Locais = $this->geraLista($est_ativos, 'sigla');
-        //$Qtd = $this->geraLista($est_ativos, 'qtde');
-        //$maior_valor = max(array_column($est_ativos, 'qtde'));
-        //$menor_valor = '0';
-        //Vagas Abertas
+      
+        
+        
+        $consultaCartorios2 = $this->listaDados('cartorio');
+        var_dump($this->sql);
+       
+        $maior_valor=0;
+        $menor_valor=0;
+        $local=0;
+        $qtd=0;
+        while ($dados = mysqli_fetch_array($consultaCartorios2)) {
+
+            if (!empty($dados['str_email'])) {
+                $email = $dados['str_email'];
+                
+            }
+        }
+
         $Locais = 'SP-RJ-CE-MT-AC-GO';
         $Qtd = '5-10-1-5-7-6';
         $maior_valor = '10';

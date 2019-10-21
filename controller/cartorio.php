@@ -1,5 +1,4 @@
 <?php
-
 @session_start();
 //Substituir require_once por $_SESSION['PATH'];
 require_once $_SESSION['PATH'] . 'model/MCartorio.php';
@@ -82,7 +81,7 @@ class Cartorio extends MCartorio {
         }
     }
 
-    function listarCartorios() {
+    function listarCartorios($par) {
         if (isset($_POST['acao'])) {
             $id = $_POST['id_cartorio'];
             $result = $this->listaDados('cartorio', $id, null, 'id_cartorio');
@@ -105,7 +104,14 @@ class Cartorio extends MCartorio {
             }
 
             echo json_encode($arr);
-        } else {
+        } elseif($par != 'inicio'){
+            $uf= explode('-', $par);
+            $uf=$uf[1];
+            $uf=$this->retornoIdUF(2, $uf);
+            
+            return $this->listaDados('cartorio',$uf,null,'id_estado');
+            
+        }else {
             return $this->listaDados('cartorio');
         }
     }
@@ -255,10 +261,8 @@ class Cartorio extends MCartorio {
     }
 
     function mandaEmail() {
-
         require_once '../application/class/PHPMailer/src/PHPMailer.php';
         require_once '../application/class/PHPMailer/src/SMTP.php';
-
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = "smtp.gmail.com";
@@ -267,7 +271,7 @@ class Cartorio extends MCartorio {
         $mail->Username = 'anoregsistema@gmail.com';
         $mail->Password = 'anoreg159';
         $mail->Port = 587;
-       // $mail->SMTPDebug = 3;
+       $mail->SMTPDebug = 3;
         $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
@@ -275,21 +279,207 @@ class Cartorio extends MCartorio {
                 'allow_self_signed' => true
             )
         );
-
         $mail->setFrom('samuka10fute@gmail.com');
         $mail->addAddress('samuka10fute@gmail.com');
-
-
         $mail->isHTML(true);
         $mail->Subject = 'Assunto do email';
         $mail->Body = 'Este é o conteúdo da mensagem em <b>HTML!</b>';
-
+        
+        
         if (!$mail->send()) {
             echo 'Não foi possível enviar a mensagem.<br>';
             echo 'Erro: ' . $mail->ErrorInfo;
         } else {
             echo 'Mensagem enviada.';
         }
+    }
+
+
+    function mapa() {
+
+
+
+        $consultaCartorios2 = $this->listarQntCartorios('cartorio');
+
+
+        $maior_valor = 0;
+        $menor_valor = 0;
+        $local = '';
+        $qtd = 0;
+        while ($dados = mysqli_fetch_array($consultaCartorios2)) {
+
+            if (empty($local)) {
+                $local = $this->retornoIdUF(1, $dados['id_estado']);
+                $qtd = $dados['total'];
+            } else {
+                $local = $local . '-' . $this->retornoIdUF(1, $dados['id_estado']);
+                $qtd = $qtd . '-' . $dados['total'];
+            }
+            
+            
+            if($dados['total'] > $maior_valor){
+                $maior_valor=$dados['total'];
+            }
+            if($menor_valor==0){
+                 $menor_valor=$dados['total'];
+            }
+            if($dados['total'] < $menor_valor){
+                $menor_valor=$dados['total'];
+            }
+        }
+
+        $Locais = $local;
+        $Qtd = $qtd;
+        $maior_valor = $maior_valor;
+        $menor_valor = $menor_valor;
+        ?>
+        <!-- Styles -->
+        <style>
+            #chartdiv {
+                width: 100%;
+                height: 500px;
+            }
+        </style>
+        <!-- FIM Styles -->
+
+
+        <!-- INICIO Estagiarios Ativos -->
+        <script>
+            //variáveis
+            var i, arraylocais, arraytotal, maior_valor, menor_valor;
+            //recebe a string com elementos separados, vindos do PHP
+            arraylocais = "<?php echo $Locais; ?>";
+            arraytotal = "<?php echo $Qtd; ?>";
+            maior_valor = "<?php echo $maior_valor; ?>";
+            menor_valor = "<?php echo $menor_valor; ?>";
+
+
+            //transforma esta string em um array próprio do Javascript
+            arraylocais = arraylocais.split("-");
+            arraytotal = arraytotal.split("-");
+
+            //alert( arraytotal);
+            var map = AmCharts.makeChart("chartdiv", {
+                "type": "map",
+                "theme": "light",
+                "colorSteps": 10,
+                "dataProvider": {
+                    "map": "brazilLow",
+                    "getAreasFromMap": true,
+                    "zoomLevel": 0.9,
+                    //Posso usar id,value,description,percent
+                    "areas": function () {
+                        var dadosArray = [];
+                        for (i in arraylocais) {
+                            dadosArray.push({
+                                "id": "BR-" + arraylocais[i],
+                                "value": arraytotal[i],
+
+                            })
+                        }
+                        return dadosArray;
+                    }()
+                },
+                "areasSettings": {
+                    "autoZoom": true,
+                    "balloonText": "[[title]]:<strong>[[value]]</strong>",
+                    "color": "#92D1C8",
+                    "colorSolid": "#000000",
+                    "rollOverOutlineColor": "#114669"
+                },
+                "legend": {
+                    "width": 240,
+                    "marginRight": 20,
+                    "marginLeft": 20,
+                    "equalWidths": true,
+                    "maxColumns": 2,
+                    "backgroundAlpha": 0.5,
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "#ffffff",
+                    "borderAlpha": 1,
+                    "right": 0,
+                    "horizontalGap": 10,
+                    "switchable": true,
+                    "data": (function () {
+                        var dadosArray = [];
+                        for (i in arraylocais) {
+                            dadosArray.push({
+                                "id": "BR-" + arraylocais[i],
+                                "title": arraylocais[i] + ' - ' + arraytotal[i],
+                                "color": "#83c2ba"
+
+                            })
+                        }
+                        return dadosArray;
+                    }())
+                },
+                "valueLegend": {
+                    "right": 10,
+                    "minValue": menor_valor,
+                    "maxValue": maior_valor
+                },
+                "zoomControl": {
+                    "minZoomLevel": 0.9
+                },
+                "titles": 'titles',
+                "listeners": [{
+                        "event": "clickMapObject",
+                        "method": redir
+                    }],
+                "titles": [{
+                        "text": "Cartórios por Estado",
+                        "size": 15
+                    }]
+            });
+
+            map.addListener('init', function () {
+                //map.legend.switchable = true;
+                map.legend.addListener("clickMarker", AmCharts.myHandleLegendClick);
+                map.legend.addListener("clickLabel", AmCharts.myHandleLegendClick);
+            });
+
+            AmCharts.myHandleLegendClick = function (event) {
+                var id = event.dataItem.id;
+                if (undefined !== event.dataItem.hidden && event.dataItem.hidden) {
+                    event.dataItem.hidden = false;
+                    map.showGroup(id);
+                } else {
+                    event.dataItem.hidden = true;
+                    map.hideGroup(id);
+                }
+                map.legend.validateNow();
+            };
+
+            function redir(event) {
+                if (event) {
+                    parent.window.location.href = "listarCartorios/" + event.mapObject.id;
+                    //alert(event.mapObject.id);
+                }
+            }
+            ;
+            function updateHeatmap(event) {
+                var map = event.chart;
+                if (map.dataGenerated)
+                    return;
+                if (map.dataProvider.areas.length === 0) {
+                    setTimeout(updateHeatmap, 100);
+                    return;
+
+                }
+
+                /*
+                 for ( var i = 0; i < map.dataProvider.areas.length; i++ ) {
+                 map.dataProvider.areas[ i ].value = Math.round( i * 1 );
+                 }*/
+                map.dataGenerated = true;
+                map.validateNow();
+            }
+            ;
+
+        </script>
+        <!-- FIM Estagiarios Ativos -->
+
+        <?php
     }
 
 }

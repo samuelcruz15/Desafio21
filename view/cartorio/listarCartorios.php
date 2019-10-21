@@ -1,5 +1,5 @@
 <?php
-$sqlCartorio = $oCartorio->listarCartorios();
+$sqlCartorio = $oCartorio->listarCartorios($p1);
 ?>
 
 

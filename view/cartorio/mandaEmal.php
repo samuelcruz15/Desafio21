@@ -8,7 +8,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="<?php echo RAIZ . "cartorio/atualizaCartorio"; ?>">Atualiza Cartorio Excel</a>
+            <a href="<?php echo RAIZ . "cartorio/mandaEmal"; ?>">Enviar Emaiil</a>
            
         </li>
       
@@ -38,7 +38,7 @@
             <div class="portlet box blue-madison" style="border-radius: 4px;">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-file-text-o"></i> - Atualizar Cartório via Excel </div>
+                        <i class="fa fa-file-text-o"></i> - Enviar Email para Cartórios </div>
 
                 </div>
                 <div class="portlet-body form">
@@ -48,13 +48,22 @@
 
                         <input type="hidden" name="arrDadosForm[method]" value="mandaEmail">
                         <div class="form-body">
-                            <h3 class="form-section">Informação Pessoal</h3>
+                            <h3 class="form-section">Dados Email</h3>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Escolha o arquivo Excel <span class="required" aria-required="true">*</span></label>
-                                        <input type="file" id="file" name="file"  accept=".xlsx" class="form-control" >
-                                        <span class="help-block"> Apenas arquivo XLSX </span>
+                                        <label class="control-label">Escolha o assunto do email<span class="required" aria-required="true">*</span></label>
+                                        <input type="text"  name="assunto"  class="form-control" required >
+                              
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Digite a mensagem <span class="required" aria-required="true">*</span></label>
+                                        <textarea class="form-control" name='conteudo' required>
+                                            
+                                        </textarea>
+                                        <span class="help-block"> Email enviado para todos os cartorios cadastrados</span>
                                     </div>
                                 </div>
                          
@@ -70,25 +79,17 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
 </div>
-
-
 
 
 <script>
     $(document).ready(function () {
 
-
-
+    
+        // Pulsante da Mensagem de Sucesso ou Erro
+        UIGeneral.init();
 
     });
-
-
-
 
 </script>

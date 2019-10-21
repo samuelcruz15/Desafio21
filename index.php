@@ -167,6 +167,11 @@ if (($modulo != 'login' and $pagina != 'inicio') AND ( $modulo != 'erro' and $pa
                 });
             </script>
             <!-- END PACE JS -->
+
+            <!-- Editor de TEXTO -->
+            <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+            <script>tinymce.init({selector: 'textarea'});</script>
+            <!-- Editor de TEXTO -->
         </head>
 
         <body class="page-sidebar-closed-hide-logo page-container-bg-solid">

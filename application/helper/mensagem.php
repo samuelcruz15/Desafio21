@@ -84,6 +84,14 @@ if (isset($_SESSION['MSG'])) {
             $MSG = 'Cartório ja cadastrado!';
             $IMG = 'erro';
             break;
+            case 19: // [Upload de XML] Sucesso
+            $MSG = 'Email não enviado, tente novamente ou contate o suporte!';
+            $IMG = 'erro';
+            break;
+            case 20: // [Upload de XML] Sucesso
+            $MSG = 'Email enviado para os cartórios!';
+            $IMG = 'sucesso';
+            break;
     }
 
     if (isset($IMG)) {

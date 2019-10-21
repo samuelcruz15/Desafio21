@@ -48,31 +48,11 @@
         <ul class="page-sidebar-menu page-header-fixed page-sidebar-menu-hover-submenu page-sidebar-menu-compact" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             
             <li class="nav-item start ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="<?php echo RAIZ . "cartorio/mapaCartorio"; ?>" class="nav-link ">
                     <i class="icon-home"></i>
                     <span class="title">Home</span>
                     <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item start ">
-                        <a href="<?php echo RAIZ . "inicio/home"; ?>" class="nav-link ">
-                            <span class="title">Página Início</span>
-                        </a>
-                    </li>
-                    <li class="nav-item start ">
-                        <a href="<?php echo RAIZ . "inicio/formulario"; ?>" class="nav-link ">
-                            <span class="title">Formulário</span>
-                        </a>
-                    </li>
-                    <li class="nav-item start ">
-                        <a href="<?php echo RAIZ . "inicio/mapa"; ?>" class="nav-link ">
-                            <span class="title">Mapa</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="page_user_login_2.html" class="nav-link "> Página de Erro </a>
-                    </li>
-                </ul>
+                </a> 
             </li>
             
               <li class="nav-item start ">

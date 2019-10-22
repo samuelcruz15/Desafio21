@@ -36,7 +36,11 @@ Fluxo sistema:
 
 Após todos os passos, terá feito o fluxo principal do sistema.
 
-Na parte Administrativa, é possível criar seu própio login em Administrador>Controle de Usuários.
+OBS1 : Na parte Administrativa, é possível criar seu própio login em Administrador>Controle de Usuários.
+OBS2: A função de envio de email, foi bloqueada para os 10 primeiros emails listados, pois existem emails reais na planilha.
+OBS3: O Email antigo responsável por fazer o envio, foi bloqueado devido a denuncia de spam,ja foi feita a troca no sistema mas caso queira adicionar outro, mudar no controller cartorio.php na função mandaEmail(o email setado tem que estar configurado para aceitar Apps menos seguros, leia mais: https://support.google.com/accounts/answer/6010255?hl=pt)
+
+
 
 
 

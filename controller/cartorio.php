@@ -268,10 +268,10 @@ class Cartorio extends MCartorio {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
-        $mail->Username = 'anoregsistema@gmail.com';
+        $mail->Username = 'emailparap21@gmail.com';
         $mail->Password = 'anoreg159';
         $mail->Port = 587;
-        // $mail->SMTPDebug = 3;
+        $mail->SMTPDebug = 3;
         $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
@@ -298,6 +298,10 @@ class Cartorio extends MCartorio {
                 echo 'Enviado às : ' . date('H:i:s') . ' <br>';
                 $total++;
             }
+            if ($total == 10) {
+                break;
+            }
+
             $mail->ClearAllRecipients();
         }
 

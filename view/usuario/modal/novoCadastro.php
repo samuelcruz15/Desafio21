@@ -67,7 +67,7 @@
                                 <div class='row' style='margin-left: -0px !important; margin-right: -0px !important;'>
                                     <div class='form-group col-md-12'>
                                         <label style='text-align:left !important;' >Email:</label>
-                                        <input class='form-control spinner' maxlength='100' name='arrDadosForm[str_email]'  type='text' placeholder='email'  value=''>
+                                        <input class='form-control spinner' maxlength='100' name='arrDadosForm[str_email]'  type='email' placeholder='email'  value=''>
                                     </div>
                                 </div>
                                 <div class="row" style="margin-left: -0px !important; margin-right: -0px !important;">

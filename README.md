@@ -7,7 +7,7 @@ Sobre o Sistema:
 Requisitos para rodar sistema:
 - PHP >= 7.2.7 
 - Habilitar Url Amigaveis (ler mais : http://www.rafaelwendel.com/2011/08/como-usar-url-amigaveis-no-servidor-apache/)
-- Banco mysql
+- Banco mysql >= 4.8.2
 -(Recomendado xampp pois ja tem php+mysql)
 
 Explicações sobre o Framework própio:
@@ -17,7 +17,7 @@ Passo a Passo para iniciar o Sitema:
 - 1º Baixe o projeto e mude o nome da pasta para anoreg
 - 2º Crie uma base no mysql com o nome 'anoreg'.
 - 3º Suba o arquivo anoreg.sql que se encontra na raiz do projeto para criar as tabelas.
-- 4º As configurações do projeto encontram-se no caminho application/config.php caso queira alterar algo.
+- 4º As configurações do projeto encontram-se no caminho application/config.php caso queira alterar algo como o diretório do sistema, que se encontra na Constate 'DIR'.
 - 5º Coloque o projeto dentro da pasta htdocs caso esteja rodando pelo xampp ou wampp
 - 6º Acesse o link local, e se tudo estiver correto, será redirecionado para página de Login.
 

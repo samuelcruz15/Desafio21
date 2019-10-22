@@ -1,0 +1,150 @@
+[33mcommit 124b38b6338d6a18e031b178b5e8328368b67c5e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 70bf992 0346b10
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Tue Oct 22 11:18:34 2019 -0300
+
+    Merge branch 'master' of github.com:samuelcruz15/Desafio21
+
+[33mcommit 70bf992c42b655f8b6768c87b621931a2f466b3a[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Tue Oct 22 11:18:11 2019 -0300
+
+    alterando o email de envio, pois o antigo foi bloqueado por Spam
+
+[33mcommit 0346b102d984992d485d1d5ef218f5fe5828e470[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: samuelcruz15 <samuka10fute@gmail.com>
+Date:   Mon Oct 21 18:39:42 2019 -0300
+
+    correção cadastro usuário
+
+[33mcommit 8f1bb6064c4809e0e0870c04663fa7e797552c6c[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 16:42:59 2019 -0300
+
+    Update README.md
+
+[33mcommit 14ff79a293543342fbea4ffbc24d32ef5c3885ae[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 16:34:40 2019 -0300
+
+    Update README.md
+
+[33mcommit e13765678566f295221a5e97076b9fd54e817ecf[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 16:22:14 2019 -0300
+
+    Update README.md
+
+[33mcommit 89f2d8acbc10a33012805ff2a62930a9494af3b0[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:59:38 2019 -0300
+
+    Update README.md
+
+[33mcommit fd360f73c2f5efb6c5b560d19d81c62ec306743e[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:45:58 2019 -0300
+
+    Update README.md
+
+[33mcommit 7304543895753e995127f9d599eec507194f5a40[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:45:05 2019 -0300
+
+    Update README.md
+
+[33mcommit 8ee29664fa473c0d6b99803c6f064b08b859723a[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:39:46 2019 -0300
+
+    Update README.md
+
+[33mcommit cf0d348a15056f40de8b7ad110eb44efad2caec4[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:38:40 2019 -0300
+
+    Update README.md
+
+[33mcommit 9f2b313f5eb4ed2f767689ee49159a843ae247e8[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:37:16 2019 -0300
+
+    Update README.md
+
+[33mcommit 50aab03fa0d94023ba116d506f9956bbcf6bcf2d[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:36:40 2019 -0300
+
+    Update README.md
+
+[33mcommit c5011649dcba935443eddab1b4034170adc4b532[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:35:51 2019 -0300
+
+    Update README.md
+
+[33mcommit a46d329798d89aab83aaedfac5c330d35979a9e5[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 15:26:41 2019 -0300
+
+    Atualização na consulta de listarEmailCartorios
+
+[33mcommit d72e080f93c3d0a7befa09761ca2dc637137f41b[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 14:48:45 2019 -0300
+
+    ultima atualizacao
+
+[33mcommit c93b1625b6d68b5dcc6efc7e8b6521456b5d86a3[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 13:19:10 2019 -0300
+
+    Mandando email para todos os cartorios
+
+[33mcommit 3c7591a923bc0d8ed3fc93eb68ebbf160994f7b2[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 12:41:19 2019 -0300
+
+    add arquivos xml e xlsx
+
+[33mcommit ecb3713f3de1ee35fbd070a91de44b95f8a92dfb[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 12:34:42 2019 -0300
+
+    alterações no envio de email
+
+[33mcommit 892ca16cea08f187fa3135599100af22eaa9a678[m
+Author: samuelcruz15 <samuka10fute@gmail.com>
+Date:   Mon Oct 21 05:20:38 2019 -0300
+
+    add banco de dados
+
+[33mcommit 13b82c39336918cf1816319e2de70908a67a4511[m
+Author: samuelcruz15 <samuka10fute@gmail.com>
+Date:   Mon Oct 21 05:16:55 2019 -0300
+
+    add mapa
+
+[33mcommit 4aaa4f23b3cc08aa2a7f57388b1a0d1051e91a8b[m
+Author: samuelcruz15 <samuka10fute@gmail.com>
+Date:   Mon Oct 21 03:52:03 2019 -0300
+
+    ajuste no envio de email
+
+[33mcommit 1753a04cf2b282546b13f9f22c759318d2725493[m
+Author: samuelcruz15 <47754513+samuelcruz15@users.noreply.github.com>
+Date:   Mon Oct 21 03:38:29 2019 -0300
+
+    Create README.md
+
+[33mcommit 75ca695e4a257cf6b83c0ee33e83987849d11390[m
+Author: samuelcruz15 <samuka10fute@gmail.com>
+Date:   Mon Oct 21 03:37:26 2019 -0300
+
+    add de itens necessarios para enviar email
+
+[33mcommit 977cd967dc2c0c9da65a19a45a88f945002aada9[m
+Author: samuelcruz15 <samuka10fute@gmail.com>
+Date:   Mon Oct 21 02:36:59 2019 -0300
+
+    Subindo Projeto 90%

@@ -271,7 +271,7 @@ class Cartorio extends MCartorio {
         $mail->Username = 'emailparap21@gmail.com';
         $mail->Password = 'anoreg159';
         $mail->Port = 587;
-        $mail->SMTPDebug = 3;
+        //$mail->SMTPDebug = 3;
         $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
